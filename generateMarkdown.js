@@ -43,7 +43,7 @@ function generateMarkdown(data) {
 
   ${data.license}
 
-  ## Contributing 
+  ## Contributing Guidelines 
 
   ${data.contributions}
 
@@ -53,9 +53,12 @@ function generateMarkdown(data) {
 
   ## Questions 
 
-  For any questions regarding this repository or how to use this generator please email me at ${email}.
+  For more information about me checkout my github at https://github.com/${data.username}. For any questions regarding this repository \n
+  or how to use this generator please email me at ${data.email}.
 
 `;
 }
 
-module.exports = generateMarkdown;
+module.exports = {
+  generateMarkdown
+};
