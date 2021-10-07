@@ -54,14 +54,10 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.appendFile('README.md', markdown.generateMarkdown(JSON.parse(data)), err => {
+    fs.writeFile('README.md', markdown.generateMarkdown(JSON.parse(data)), err => {
         if(err) {
             console.log(err);
         }
-        // } else {
-        //     console.log(data);
-        //     markdown.generateMarkdown(data);
-        // }
     })
 }
 
@@ -72,6 +68,12 @@ function init() {
     .then((data) => {
         console.log(data);
         writeToFile('README.md', JSON.stringify(data));
+        markdown.renderLicenseBadge(data.license);
+        markdown.renderLicenseLink(data.license);
+        markdown.renderLicenseSection(data.license);
+    })
+    .catch((err) => {
+        console.log('error', err);
     });
 }
 
