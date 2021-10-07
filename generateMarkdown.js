@@ -14,6 +14,47 @@ function renderLicenseSection(license) {}
 function generateMarkdown(data) {
   return `# ${data.title}
 
+  ## Description
+
+  ${data.description}
+
+  ## Table of Contents
+
+  * [Installation](#installation)
+
+  * [Usage](#usage)
+
+  * [License](#license)
+
+  * [Contributing](#contributing)
+
+  * [Tests](#tests)
+
+  * [Questions](#questions)
+
+  ## Installations 
+
+  ${data.installs}
+
+  ## Usage
+
+
+  ## License 
+
+  ${data.license}
+
+  ## Contributing 
+
+  ${data.contributions}
+
+  ## Tests
+
+  ${data.tests}
+
+  ## Questions 
+
+  For any questions regarding this repository or how to use this generator please email me at ${email}.
+
 `;
 }
 

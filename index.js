@@ -52,12 +52,24 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile('README.md', data, err => {
+        if(err) {
+            console.log(err);
+        } else {
+            console.log(data);
+        }
+    })
+}
 
 // TODO: Create a function to initialize app
 function init() {
     inquirer
-    .prompt(questions);
+    .prompt(questions)
+    .then((data) => {
+        console.log(data);
+        writeToFile(data.title, JSON.stringify(data));
+    });
 }
 
 // Function call to initialize app
