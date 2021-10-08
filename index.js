@@ -71,7 +71,7 @@ function init() {
     inquirer
     .prompt(questions)
     .then((data) => {
-        console.log(data);
+        console.log('README has been generated!');
         writeToFile('README.md', JSON.stringify(data));
         markdown.renderLicenseBadge(data.license);
         markdown.renderLicenseLink(data.license);
