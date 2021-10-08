@@ -34,7 +34,7 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if(license) {
-    return `[![License][${renderLicenseBadge(license)}]${renderLicenseLink(license)}]`;
+    return `[![License]${renderLicenseBadge(license)}]${renderLicenseLink(license)}`;
   } else {
     return '';
   }
@@ -69,6 +69,7 @@ function generateMarkdown(data) {
 
   ## Usage
 
+  ${data.usage}
 
   ## License 
 
@@ -96,4 +97,3 @@ module.exports = {
   renderLicenseLink,
   renderLicenseSection
 };
-//[![License](https://img.shields.io/badge/License-${data.license}-blue.svg)](https://opensource.org/licenses/${data.license})

@@ -32,6 +32,11 @@ const questions = [
     },
     {
         type: 'input',
+        messgae: 'What is this project to be used for?',
+        name: 'usage'
+    },
+    {
+        type: 'input',
         message: 'What command should be run to install independencies?',
         name: 'installs',
     },
